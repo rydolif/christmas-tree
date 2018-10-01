@@ -2,49 +2,6 @@ $(function() {
 
 
 
-
-//------------------------------slider-----------------------------
-  $('.model__slider_big').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: false,
-    asNavFor: '.model__slider_min'
-  });
-
-
-  $('.model__slider_min').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: '.model__slider_big',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          infinite: false,
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',  
-        }
-      },
-      {
-        breakpoint: 776,
-        settings: {
-          slidesToShow: 3,
-          infinite: false,
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-        }
-      }
-    ]
-  });
-
-
 //------------------------------таби-----------------------------
   $('.model__slider').hide();
   $('.model__slider:first').show();
@@ -59,8 +16,75 @@ $(function() {
     var selectTab = $(this).attr('href');
     $(selectTab).fadeIn();
 
-    $(".slider").slick('reinit');
+    $('.first ').show();
   });
+
+
+
+//------------------------------таби-2----------------------------
+  $('.slid').hide();
+  $('.slid:first').show();
+  $('.model__slider_min a:first').addClass('active');
+
+  $('.model__slider_min a').click(function(event){
+    event.preventDefault();
+    $('.model__slider_min a').removeClass('active');
+    $(this).addClass('active');
+    $('.slid').hide();
+
+    var selectTab = $(this).attr('href');
+    $(selectTab).fadeIn();
+  });
+
+//-------------------------скорость якоря---------------------------------------
+  $(".click").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top - 90}, 'slow', 'swing');
+  });
+
+//------------------------------slider-----------------------------
+  // $('.model__slider_big').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   fade: false,
+  //   asNavFor: '.model__slider_min'
+  // });
+
+
+  // $('.model__slider_min').slick({
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   asNavFor: '.model__slider_big',
+  //   dots: false,
+  //   centerMode: true,
+  //   focusOnSelect: true,
+  //   arrows: false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1200,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         infinite: false,
+  //         arrows: false,
+  //         centerMode: true,
+  //         centerPadding: '40px',  
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 776,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         infinite: false,
+  //         arrows: false,
+  //         centerMode: true,
+  //         centerPadding: '40px',
+  //       }
+  //     }
+  //   ]
+  // });
+
 
 
 //------------------------------гамбургер-----------------------------

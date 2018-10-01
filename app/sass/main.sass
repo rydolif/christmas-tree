@@ -2,6 +2,25 @@
 @import "base"
 @import "page"
 
+
+.header__logo
+	a
+		display: flex
+		align-items: center
+		line-height: .7
+		font-weight: 800
+		color: #2e6027
+		text-transform: uppercase
+		font-size: 24px
+	span
+		font-weight: 600
+		color: #494949
+		text-transform: none
+		font-size: 14px
+
+	img
+		margin-right: 10px
+
 .model
 	text-align: center
 	
@@ -31,6 +50,7 @@
 
 		&_big
 			img
+				display: block
 				width: 100%
 				max-width: 300px
 				max-height: 450px
@@ -43,6 +63,14 @@
 
 
 		&_min
+			width: 100%
+			display: flex
+			flex-direction: row
+
+			a
+				width: 30%
+				display: block
+				margin-right: 3%
 		
 			img
 				width: 100%
@@ -175,18 +203,28 @@
 		font-weight: 400
 		margin-bottom: 20px
 		text-align: center
-	.green-btn
-		border: 3px solid #2e6027
-		background: none
-		color: #2e6027
-		line-height: 40px
-		&:hover
-			background-color: #2e6027
-			color: #fff	
+
 	.wrap
 		text-align: center	
 
-.buy-form		
+.green-btn
+	border: 3px solid #2e6027
+	background: none
+	color: #2e6027
+	line-height: 40px
+	&:hover
+		background-color: #fff
+		border: 3px solid #2e6027
+		color: #2e6027
+		cursor: default
+	&:hover
+		background-color: #fff
+		border: 3px solid #2e6027
+		color: #2e6027
+		cursor: default
+
+
+.buy-form
 	padding-bottom: 70px
 	padding-top: 50px	
 	&__content
@@ -240,8 +278,6 @@
 							margin-right: 15px	
 
 
-
-
 .snow
 	background: url("../img/snow-bg.jpg") no-repeat center top / cover		
 	padding-top: 70px
@@ -286,10 +322,6 @@
 		color: #3c6a35
 		font-size: 36px
 		font-weight: 700	
-
-
-
-
 
 
 .footer
